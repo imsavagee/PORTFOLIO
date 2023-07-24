@@ -3,11 +3,55 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Signika Negative', sans-serif;
+    cursor: none;
+
 }
 
 body {
     background-color: black;
-    cursor: crosshair;
+}
+
+.cursor {
+    height: 20px;
+    width: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition: 150ms ease-out;
+    animation: cursorAnim .4s infinite alternate;
+}
+
+.cursor::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid orangered;
+    border-radius: 50%;
+    opacity: .8;
+    top: -10px;
+    left: -10px;
+    animation: cursorAnim2 .5s infinite alternate;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.8);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.4);
+    }
 }
 
 .firstDiv {
@@ -22,16 +66,18 @@ body {
 
 .myInfo h1 {
     font-size: 5rem;
+    /* transition:  2s ease-in; */
 }
 
 .myInfo {
     width: 30%;
 }
 
-#element{
+#element {
     font-size: 2rem;
     color: orangered;
 }
+
 .display-inline {
     display: inline-block;
     width: 10%;
@@ -58,10 +104,12 @@ body {
     color: white;
     display: flex;
     justify-content: space-around;
+    height: 80%;
+
 }
 
 .aboutMe {
-    padding: 2rem 8%;
+    padding: 4rem 8%;
     width: 50%;
 
 }
@@ -83,7 +131,7 @@ body {
 
 .resume {
     width: 50%;
-    padding: 2rem 8%;
+    padding: 4rem 8%;
 }
 
 .resume h2 {
@@ -95,7 +143,7 @@ button {
     width: 50%;
     height: 20%;
     background-color: #0f0f0f;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 8px;
     position: relative;
     left: 25%;
@@ -110,7 +158,7 @@ button a {
 
 button:hover {
     background-color: orangered;
-    
+
 }
 
 
@@ -166,7 +214,7 @@ button:hover {
     padding: 1rem 0;
 }
 
-.myProject ol p{
+.myProject ol p {
     font-size: .9rem;
     opacity: 0.8;
     padding-bottom: 1rem;
@@ -201,9 +249,10 @@ footer h3 {
     font-weight: lighter;
 }
 
-footer .display-inline{
+footer .display-inline {
     width: 5vw;
 }
+
 @media only screen and (max-width: 600px) {
     .firstDiv {
         display: flex;
@@ -224,9 +273,11 @@ footer .display-inline{
         font-size: .8rem;
 
     }
-    #element{
+
+    #element {
         font-size: 1rem;
     }
+
     .myImg {
         padding-top: 20%;
         width: 38%;
@@ -266,7 +317,7 @@ footer .display-inline{
         padding-bottom: 1rem
     }
 
-    .skillsFlex img{
+    .skillsFlex img {
         opacity: 1;
         width: auto;
         height: 7vh;
